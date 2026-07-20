@@ -1,7 +1,7 @@
 {
   "name": "محتار — مرشدك الجامعي",
   "short_name": "محتار",
-  "description": "Career-first Saudi university admission counselor. AI asks 7 questions, returns 3 ranked career paths with universities, salary ranges, and growth.",
+  "description": "Career-first Saudi university admission counselor. AI asks 9 questions, returns 3 ranked career paths with universities, salary ranges, and growth.",
   "lang": "ar",
   "dir": "rtl",
   "start_url": "/",

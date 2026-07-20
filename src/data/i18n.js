@@ -15,7 +15,6 @@ export const TRANSLATIONS = {
     hero: {
       tagline: 'محتار؟ عندك مرشد ومستشار',
       subtitle: 'أول مستشار ذكي للقبول الجامعي في المملكة العربية السعودية',
-      description: 'يحدد مسارك الجامعي ويوصلك لتخصصك المختار بثقة',
       cta: 'يلا نبدأ',
       ctaSecondary: 'شوف كيف يشتغل',
       placeholder: 'وش تبي تسأل يا محتار؟',
@@ -66,7 +65,6 @@ export const TRANSLATIONS = {
       start: 'يلا نبدأ الرحلة',
       questionsLeft: 'أسئلة متبقية',
       of: 'من',
-      skipToResults: 'تخطي وعرض النتائج',
     },
     // Results
     results: {
@@ -113,7 +111,6 @@ export const TRANSLATIONS = {
     hero: {
       tagline: 'Confused? You have a guide & consultant',
       subtitle: 'The first AI-powered university counselor in Saudi Arabia',
-      description: 'Maps your academic path and guides you to your chosen major with confidence',
       cta: 'Get Started',
       ctaSecondary: 'See How It Works',
       placeholder: 'What do you want to ask Muhtar?',
@@ -160,11 +157,10 @@ export const TRANSLATIONS = {
     // Chat
     chat: {
       welcome: 'Welcome to Muhtar! 👋',
-      welcomeDesc: "I'm here to help you choose your university major with confidence. Let me get to know you in 5 quick questions.",
+      welcomeDesc: "I'm here to help you choose your university major with confidence. Let me get to know you in 9 quick questions (3 minutes).",
       start: 'Start the Journey',
       questionsLeft: 'questions left',
       of: 'of',
-      skipToResults: 'Skip & Show Results',
     },
     // Results
     results: {

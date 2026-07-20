@@ -36,7 +36,7 @@ export default function UniversitiesPage({ lang, onStart }) {
               {lang === 'ar' ? 'الجامعات الحكومية السعودية' : 'Saudi Government Universities'}
             </span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-extrabold text-primary mb-4 leading-tight">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-primary mb-4 leading-tight arabic-heading">
             {lang === 'ar' ? '29 جامعة حكومية في متناولك' : '29 Government Universities in Your Reach'}
           </h1>
           <p className="text-lg text-primary/70 max-w-2xl mx-auto">

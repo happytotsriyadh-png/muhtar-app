@@ -83,7 +83,7 @@ export default function LoadingAnimation({ lang, onComplete }) {
           key={msgIndex}
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-xl font-bold text-primary"
+          className="text-xl font-bold text-primary arabic-heading"
         >
           {messages[msgIndex]}
         </motion.p>

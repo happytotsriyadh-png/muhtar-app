@@ -14,7 +14,7 @@ export default function AboutPage({ lang, onStart }) {
               {lang === 'ar' ? 'من نحن' : 'About Us'}
             </span>
           </div>
-          <h1 className="text-4xl md:text-6xl font-extrabold text-primary mb-6 leading-tight">
+          <h1 className="text-4xl md:text-6xl font-extrabold text-primary mb-6 leading-tight arabic-heading">
             {lang === 'ar' ? 'ليش محتار؟' : 'Why Muhtar?'}
           </h1>
           <p className="text-lg md:text-xl text-primary/70 max-w-3xl mx-auto leading-relaxed">
@@ -31,7 +31,7 @@ export default function AboutPage({ lang, onStart }) {
               <Target className="w-6 h-6 text-white" />
             </div>
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold text-primary mb-3">
+              <h2 className="text-2xl md:text-3xl font-bold text-primary mb-3 arabic-heading">
                 {lang === 'ar' ? 'مهمتنا' : 'Our Mission'}
               </h2>
               <p className="text-primary/75 text-lg leading-relaxed">
@@ -49,7 +49,7 @@ export default function AboutPage({ lang, onStart }) {
             <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center shrink-0">
               <Sparkles className="w-6 h-6 text-white" />
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-primary">
+            <h2 className="text-2xl md:text-3xl font-bold text-primary arabic-heading">
               {lang === 'ar' ? 'القصة' : 'The Story'}
             </h2>
           </div>
@@ -78,7 +78,7 @@ export default function AboutPage({ lang, onStart }) {
               <div className={`w-14 h-14 mx-auto rounded-2xl bg-gradient-to-br ${v.color} flex items-center justify-center mb-4 shadow-lg`}>
                 <v.icon className="w-7 h-7 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-primary mb-2">
+              <h3 className="text-xl font-bold text-primary mb-2 arabic-heading">
                 {lang === 'ar' ? v.title_ar : v.title_en}
               </h3>
               <p className="text-primary/70">
@@ -90,14 +90,14 @@ export default function AboutPage({ lang, onStart }) {
 
         {/* Stats */}
         <div className="bg-gradient-to-br from-primary to-primary-800 rounded-3xl p-8 md:p-12 shadow-2xl text-white mb-12">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-10">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-10 arabic-heading">
             {lang === 'ar' ? 'الأرقام تتكلم' : 'The Numbers Speak'}
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
               { num: '29', label_ar: 'جامعة حكومية', label_en: 'gov. universities' },
               { num: '18+', label_ar: 'تخصص مدروس', label_en: 'studied majors' },
-              { num: '7', label_ar: 'أسئلة ذكية', label_en: 'smart questions' },
+              { num: '9', label_ar: 'أسئلة ذكية', label_en: 'smart questions' },
               { num: '3min', label_ar: 'للنتيجة', label_en: 'to results' },
             ].map((s, i) => (
               <div key={i} className="text-center">

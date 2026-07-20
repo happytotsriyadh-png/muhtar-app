@@ -18,9 +18,9 @@
 
 ## Your Solution (40+ words)
 
-**محتار** هو أول مستشار ذكي سعودي للقبول الجامعي. من 7 أسئلة فقط (3 دقائق)، يحلل شخصيتك (RIASEC model)، معدلك، تفضيلاتك الدراسية والمكانية، ويعطيك 3 مسارات وظيفية مرتّبة مع: شرح مفصّل بالعربي، 29 جامعة حكومية سعودية كمصدر بيانات رسمي، نسب قبول واقعية، رواتب سوق العمل، نسبة النمو، وعلامة "رؤية 2030". ويشتغل كتطبيق هاتف (PWA) مع واجهة عربية كاملة RTL.
+**محتار** هو أول مستشار ذكي سعودي للقبول الجامعي. من 9 أسئلة فقط (3 دقائق)، يحلل شخصيتك (RIASEC model)، معدلك، تفضيلاتك الدراسية والمكانية، ويعطيك 3 مسارات وظيفية مرتّبة مع: شرح مفصّل بالعربي، 29 جامعة حكومية سعودية كمصدر بيانات رسمي، نسب قبول واقعية، رواتب سوق العمل، نسبة النمو، وعلامة "رؤية 2030". ويشتغل كتطبيق هاتف (PWA) مع واجهة عربية كاملة RTL.
 
-*English version:* **Muhtar** is the first Saudi AI university-admission counselor. From just 7 questions (3 minutes) it analyzes your personality (RIASEC model), grade, study preferences, and target city — then returns 3 ranked career paths with: full Arabic explanations, 29 official Saudi government universities as the data source, real admission percentages, market salaries, growth %, and a Vision 2030 alignment badge. Installs as a phone app (PWA) with full Arabic RTL UI.
+*English version:* **Muhtar** is the first Saudi AI university-admission counselor. From just 9 questions (3 minutes) it analyzes your personality (RIASEC model), grade, study preferences, and target city — then returns 3 ranked career paths with: full Arabic explanations, 29 official Saudi government universities as the data source, real admission percentages, market salaries, growth %, and a Vision 2030 alignment badge. Installs as a phone app (PWA) with full Arabic RTL UI.
 
 ---
 

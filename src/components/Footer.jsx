@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Heart, Github, Twitter, Linkedin, Mail } from 'lucide-react';
+import { Heart, Github, Mail } from 'lucide-react';
 import { TRANSLATIONS } from '../data/i18n';
 
 export default function Footer({ lang }) {
@@ -14,9 +14,9 @@ export default function Footer({ lang }) {
           {/* Brand */}
           <div>
             <img
-              src="/logo-white.png"
+              src="/logo.png"
               alt="محتار"
-              className="relative w-28 h-28 rounded-2xl object-contain mb-4"
+              className="relative w-28 h-28 rounded-2xl object-contain mb-4 ring-2 ring-white/20"
             />
             <p className="text-white/70 leading-relaxed">{t.about}</p>
             <div className="mt-4 flex items-center gap-2 text-gold-400">
@@ -27,7 +27,7 @@ export default function Footer({ lang }) {
 
           {/* Tools */}
           <div>
-            <h3 className="text-lg font-bold text-gold-400 mb-4">{t.poweredBy}</h3>
+            <h3 className="text-lg font-bold text-gold-400 mb-4 arabic-heading">{t.poweredBy}</h3>
             <ul className="space-y-2 text-white/70">
               <li>⚡ React + Vite</li>
               <li>🎨 Tailwind CSS</li>
@@ -40,21 +40,22 @@ export default function Footer({ lang }) {
 
           {/* Social */}
           <div>
-            <h3 className="text-lg font-bold text-gold-400 mb-4">
+            <h3 className="text-lg font-bold text-gold-400 mb-4 arabic-heading">
               {lang === 'ar' ? 'تواصل معنا' : 'Connect'}
             </h3>
             <div className="flex gap-3">
               {[
-                { Icon: Twitter, href: '#' },
-                { Icon: Linkedin, href: '#' },
-                { Icon: Github, href: '#' },
-                { Icon: Mail, href: '#' },
-              ].map(({ Icon, href }, i) => (
+                { Icon: Github, href: 'https://github.com/happytotsriyadh-png/muhtar-app', label: 'GitHub' },
+                { Icon: Mail, href: 'mailto:hello@muhtar.amk.ink', label: 'Email' },
+              ].map(({ Icon, href, label }, i) => (
                 <motion.a
                   key={i}
                   href={href}
+                  target={href.startsWith('http') ? '_blank' : undefined}
+                  rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   whileTap={{ scale: 0.95 }}
+                  aria-label={label}
                   className="w-10 h-10 rounded-xl bg-white/10 hover:bg-gold-400/20 flex items-center justify-center transition-colors"
                 >
                   <Icon className="w-5 h-5" />

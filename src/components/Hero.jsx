@@ -78,6 +78,22 @@ export default function Hero({ lang, onStart }) {
           {t.subtitle}
         </motion.p>
 
+        {/* Secondary CTA — discover how it works */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.65, duration: 0.5 }}
+          className="mt-4 flex items-center justify-center"
+        >
+          <a
+            href="#how"
+            className="inline-flex items-center gap-1.5 text-sm md:text-base font-semibold text-primary-700 hover:text-primary-900 transition-colors arabic-heading"
+          >
+            <span>{t.ctaSecondary}</span>
+            <span className={lang === 'ar' ? 'rotate-180' : ''}>→</span>
+          </a>
+        </motion.div>
+
         {/* Search bar — single elegant input */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
