@@ -90,14 +90,25 @@ export default function Navbar({ lang, setLang, onStart, currentPath, goHome, go
               {lang === 'ar' ? 'ابدأ الآن' : 'Start Now'}
             </motion.button>
 
-            {/* Mobile menu */}
-            <button
-              onClick={() => setMobileOpen(!mobileOpen)}
-              className="md:hidden p-2 rounded-lg hover:bg-primary/5"
-              aria-label="menu"
-            >
-              {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+            {/* Mobile CTA + menu — show "ابدأ الآن" on small screens, hamburger for nav */}
+            <div className="flex md:hidden items-center gap-2 shrink-0">
+              <motion.button
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.96 }}
+                onClick={onStart}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full font-bold text-xs bg-gradient-to-r from-gold-400 to-gold-500 text-primary-900 shadow-md"
+              >
+                <GraduationCap className="w-3.5 h-3.5" />
+                {lang === 'ar' ? 'ابدأ' : 'Start'}
+              </motion.button>
+              <button
+                onClick={() => setMobileOpen(!mobileOpen)}
+                className="p-2 rounded-lg hover:bg-primary/10 text-primary-900"
+                aria-label="menu"
+              >
+                {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -109,22 +120,23 @@ export default function Navbar({ lang, setLang, onStart, currentPath, goHome, go
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="md:hidden bg-white/95 backdrop-blur-xl border-t border-gray-100 overflow-hidden"
+            className="md:hidden bg-white/95 backdrop-blur-xl border-t border-gray-100 overflow-hidden shadow-lg"
           >
-            <div className="px-4 py-4 space-y-3">
+            <div className="px-4 py-4 space-y-1">
               {navLinks.map((link) => (
                 <button
                   key={link.key}
                   onClick={() => { link.navigate(); setMobileOpen(false); }}
-                  className="block w-full text-start py-2 text-primary/80 hover:text-primary font-medium"
+                  className="block w-full text-start py-3 px-3 rounded-xl text-primary-800 hover:text-primary-900 hover:bg-primary-50 font-semibold transition-colors"
                 >
                   {t[link.key]}
                 </button>
               ))}
               <button
                 onClick={() => { onStart(); setMobileOpen(false); }}
-                className="w-full btn-gold mt-3"
+                className="w-full mt-3 flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-bold text-sm bg-gradient-to-r from-gold-400 to-gold-500 text-primary-900 shadow-md"
               >
+                <GraduationCap className="w-4 h-4" />
                 {lang === 'ar' ? 'ابدأ الآن' : 'Start Now'}
               </button>
             </div>

@@ -50,18 +50,12 @@ export default function Hero({ lang, onStart }) {
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.35, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="arabic-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[1.05] tracking-tight text-primary-900"
+          className="arabic-heading text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[1.15] tracking-tight text-primary-900 px-2"
         >
           <span className="block">{lang === 'ar' ? 'محتار؟' : 'Confused?'}</span>
-          <span className="block mt-2 text-primary-700">
+          <span className="block mt-2 md:mt-3 text-primary-700 text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
             {lang === 'ar' ? (
-              <>عندك <span className="relative inline-block">
-                <span className="relative z-10 text-gold-600">مرشد</span>
-                <span className="absolute bottom-1 left-0 right-0 h-2 bg-gold-300/60 -z-0 rounded-full" />
-              </span> و<span className="relative inline-block">
-                <span className="relative z-10 text-gold-600">مستشار</span>
-                <span className="absolute bottom-1 left-0 right-0 h-2 bg-gold-300/60 -z-0 rounded-full" />
-              </span></>
+              <>عندك <span className="text-gold-600 border-b-4 border-gold-400/80 pb-1">مرشد</span> و<span className="text-gold-600 border-b-4 border-gold-400/80 pb-1">مستشار</span></>
             ) : (
               <>You have a <span className="text-gold-600">guide</span></>
             )}
@@ -99,7 +93,7 @@ export default function Hero({ lang, onStart }) {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 0.6 }}
-          className="max-w-2xl mx-auto mt-10 md:mt-12"
+          className="max-w-2xl mx-auto mt-10 md:mt-12 px-2"
         >
           <div className="relative group">
             {/* Soft glow on hover */}
@@ -108,14 +102,14 @@ export default function Hero({ lang, onStart }) {
               <input
                 type="text"
                 placeholder={t.placeholder}
-                className="flex-1 px-4 py-3.5 bg-transparent outline-none text-primary-900 placeholder-primary-400 font-medium text-base"
+                className="flex-1 min-w-0 px-3 md:px-4 py-3 md:py-3.5 bg-transparent outline-none text-primary-900 placeholder-primary-400 font-medium text-sm md:text-base"
                 dir={lang === 'ar' ? 'rtl' : 'ltr'}
               />
               <motion.button
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 onClick={onStart}
-                className="flex items-center gap-2 bg-primary-800 hover:bg-primary-900 text-white px-6 py-3 rounded-xl font-bold text-sm md:text-base transition-colors shadow-md"
+                className="shrink-0 flex items-center gap-1.5 md:gap-2 bg-primary-800 hover:bg-primary-900 text-white px-4 md:px-6 py-3 rounded-xl font-bold text-sm md:text-base transition-colors shadow-md"
               >
                 {t.cta}
                 <ArrowLeft className={`w-4 h-4 ${lang === 'ar' ? '' : 'rotate-180'}`} />
