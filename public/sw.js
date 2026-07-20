@@ -1,5 +1,5 @@
 // Muhtar service worker — offline-first shell + runtime cache
-const CACHE_VERSION = 'muhtar-v1';
+const CACHE_VERSION = 'muhtar-v2';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
