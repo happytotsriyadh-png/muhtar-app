@@ -31,7 +31,14 @@ export default function Results({ lang, answers, onRestart }) {
           >
             🎉
           </motion.div>
-          <h1 className="text-3xl md:text-5xl font-extrabold gradient-text mb-3">
+          <h1
+            className="text-3xl md:text-5xl font-black text-primary mb-3"
+            style={{
+              textShadow: '0 0 1px rgba(15, 66, 57, 0.6), 0 1px 2px rgba(15, 66, 57, 0.3)',
+              letterSpacing: '-0.02em',
+              fontFamily: 'Cairo, IBM Plex Sans Arabic, Tajawal, sans-serif',
+            }}
+          >
             {t.title}
           </h1>
           <p className="text-primary/70 text-lg mb-2">{t.subtitle}</p>

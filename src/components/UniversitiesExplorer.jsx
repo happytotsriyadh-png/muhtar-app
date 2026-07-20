@@ -109,7 +109,14 @@ export default function UniversitiesExplorer({ lang }) {
             <GraduationCap className="w-4 h-4" />
             {lang === 'ar' ? 'بيانات رسمية' : 'Official Data'}
           </div>
-          <h2 className="text-3xl md:text-5xl font-extrabold gradient-text mb-3">
+          <h2
+            className="text-3xl md:text-5xl font-black text-primary mb-3"
+            style={{
+              textShadow: '0 0 1px rgba(15, 66, 57, 0.6), 0 1px 2px rgba(15, 66, 57, 0.3)',
+              letterSpacing: '-0.02em',
+              fontFamily: 'Cairo, IBM Plex Sans Arabic, Tajawal, sans-serif',
+            }}
+          >
             {t.title}
           </h2>
           <p className="text-primary/70 text-lg max-w-2xl mx-auto">{t.subtitle}</p>
