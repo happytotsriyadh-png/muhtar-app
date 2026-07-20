@@ -38,41 +38,46 @@ export default function Hero({ lang, onStart }) {
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Tagline — Hero logo removed; small icon lives in Navbar only */}
 
-        {/* Tagline — smaller & in a frosted glass card */}
+        {/* Tagline — free-floating white text, no box */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="inline-block mt-16 md:mt-24 lg:mt-32 mb-12 md:mb-16"
+          className="mt-20 md:mt-28 lg:mt-36 mb-10 md:mb-14"
         >
-          <div className="relative px-6 py-3 md:px-8 md:py-4 rounded-2xl bg-white/55 backdrop-blur-xl border border-white/60 shadow-xl">
-            {/* Subtle gradient overlay */}
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 via-transparent to-gold-400/10 pointer-events-none" />
-            <h1 className="relative text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight">
-              <span className="bg-gradient-to-r from-primary via-primary-700 to-primary bg-clip-text text-transparent">
-                {lang === 'ar' ? 'محتار؟' : 'Confused?'}
-              </span>
-              <span className="mx-2 text-gold-500">·</span>
-              <span className="text-primary/85 font-bold">
-                {lang === 'ar' ? 'عندك مرشد ومستشار' : 'You have a guide'}
-              </span>
-            </h1>
-          </div>
+          <h1
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight px-4"
+            style={{
+              color: '#ffffff',
+              textShadow: '0 2px 24px rgba(10, 37, 64, 0.45), 0 0 60px rgba(47, 171, 153, 0.25)',
+            }}
+          >
+            <span className="text-white">
+              {lang === 'ar' ? 'محتار؟' : 'Confused?'}
+            </span>
+            <span className="mx-2 text-gold-400">·</span>
+            <span className="text-white">
+              {lang === 'ar' ? 'عندك مرشد ومستشار' : 'You have a guide'}
+            </span>
+          </h1>
         </motion.div>
 
-        {/* Subtitle — frosted glass card so it reads as part of the background */}
+        {/* Subtitle — free-floating white text */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
           className="mb-8 max-w-3xl mx-auto px-4"
         >
-          <div className="relative inline-block px-6 py-3 rounded-2xl bg-white/55 backdrop-blur-xl border border-white/60 shadow-lg">
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 via-transparent to-gold-400/10 pointer-events-none" />
-            <p className="relative text-base md:text-lg text-primary/80 font-medium leading-relaxed">
-              {t.subtitle}
-            </p>
-          </div>
+          <p
+            className="text-base md:text-xl font-medium leading-relaxed"
+            style={{
+              color: '#ffffff',
+              textShadow: '0 2px 20px rgba(10, 37, 64, 0.5)',
+            }}
+          >
+            {t.subtitle}
+          </p>
         </motion.div>
 
         {/* Animated input bar */}
@@ -104,7 +109,7 @@ export default function Hero({ lang, onStart }) {
           </div>
         </motion.div>
 
-        {/* Quick features row */}
+        {/* Quick features row — free-floating cards on background */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -120,17 +125,17 @@ export default function Hero({ lang, onStart }) {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1 + i * 0.1 }}
                 whileHover={{ y: -4, scale: 1.02 }}
-                className="bg-white/70 backdrop-blur-md rounded-2xl p-5 text-start card-hover shadow-lg border border-primary/10"
+                className="text-start"
               >
-                <feature.icon className="w-8 h-8 text-primary mb-2" />
-                <h3 className="font-bold text-primary mb-1">{f.title}</h3>
-                <p className="text-sm text-primary/60">{f.desc}</p>
+                <feature.icon className="w-8 h-8 text-gold-400 mb-2" style={{ filter: 'drop-shadow(0 2px 8px rgba(10,37,64,0.5))' }} />
+                <h3 className="font-bold text-white" style={{ textShadow: '0 2px 16px rgba(10,37,64,0.5)' }}>{f.title}</h3>
+                <p className="text-sm text-white/80" style={{ textShadow: '0 1px 8px rgba(10,37,64,0.6)' }}>{f.desc}</p>
               </motion.div>
             );
           })}
         </motion.div>
 
-        {/* Stats */}
+        {/* Stats — free-floating on background */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -146,12 +151,17 @@ export default function Hero({ lang, onStart }) {
             <motion.div
               key={i}
               whileHover={{ scale: 1.05 }}
-              className="text-center bg-white/70 backdrop-blur-md px-4 py-2 rounded-xl border border-primary/10 shadow-sm"
+              className="text-center"
             >
-              <div className="text-3xl md:text-4xl font-extrabold text-primary">
+              <div
+                className="text-3xl md:text-4xl font-extrabold text-gold-400"
+                style={{ textShadow: '0 2px 24px rgba(10,37,64,0.6), 0 0 40px rgba(212,175,55,0.3)' }}
+              >
                 {stat.n}
               </div>
-              <div className="text-sm text-primary/70 mt-1">{stat.label}</div>
+              <div className="text-sm text-white mt-1" style={{ textShadow: '0 1px 8px rgba(10,37,64,0.6)' }}>
+                {stat.label}
+              </div>
             </motion.div>
           ))}
         </motion.div>
