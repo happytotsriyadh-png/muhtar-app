@@ -38,38 +38,46 @@ export default function Hero({ lang, onStart }) {
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Tagline — Hero logo removed; small icon lives in Navbar only */}
 
-        {/* Tagline — in a transparent glass card with white text */}
+        {/* Tagline — free-floating white text, no box */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="inline-block mt-20 md:mt-28 lg:mt-36 mb-10 md:mb-14"
+          className="mt-20 md:mt-28 lg:mt-36 mb-10 md:mb-14 px-4"
         >
-          <div className="relative px-6 py-3 md:px-8 md:py-4 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-xl">
-            <h1 className="relative text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight">
-              <span className="text-white">
-                {lang === 'ar' ? 'محتار؟' : 'Confused?'}
-              </span>
-              <span className="mx-2 text-gold-400">·</span>
-              <span className="text-white">
-                {lang === 'ar' ? 'عندك مرشد ومستشار' : 'You have a guide'}
-              </span>
-            </h1>
-          </div>
+          <h1
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight"
+            style={{
+              color: '#ffffff',
+              textShadow: '0 2px 24px rgba(10, 37, 64, 0.55), 0 0 60px rgba(47, 171, 153, 0.3)',
+            }}
+          >
+            <span className="text-white">
+              {lang === 'ar' ? 'محتار؟' : 'Confused?'}
+            </span>
+            <span className="mx-2 text-gold-400">·</span>
+            <span className="text-white">
+              {lang === 'ar' ? 'عندك مرشد ومستشار' : 'You have a guide'}
+            </span>
+          </h1>
         </motion.div>
 
-        {/* Subtitle — in a transparent glass card with white text */}
+        {/* Subtitle — free-floating white text, no box */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
           className="mb-8 max-w-3xl mx-auto px-4"
         >
-          <div className="relative inline-block px-6 py-3 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg">
-            <p className="relative text-base md:text-lg text-white font-medium leading-relaxed">
-              {t.subtitle}
-            </p>
-          </div>
+          <p
+            className="text-base md:text-xl font-medium leading-relaxed"
+            style={{
+              color: '#ffffff',
+              textShadow: '0 2px 20px rgba(10, 37, 64, 0.6)',
+            }}
+          >
+            {t.subtitle}
+          </p>
         </motion.div>
 
         {/* Animated input bar */}
