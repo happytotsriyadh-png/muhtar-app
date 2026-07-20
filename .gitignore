@@ -33,3 +33,13 @@ lerna-debug.log*
 *.sln
 *.sw?
 demo-v2.mp4
+
+# Screenshots
+*.mov
+*.mp4
+
+# Hermes session files
+.hermes/
+
+# OS
+.DS_Store

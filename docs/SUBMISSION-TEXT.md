@@ -1,10 +1,56 @@
-# Muhtar · Kanz AI Hackathon 2026 — Submission Text
+# Muhtar · Kanz AI Hackathon 2026 — Final Submission
 
 > **Project URL:** https://muhtar-app.vercel.app  
 > **App name:** محتار — مرشدك الجامعي  
 > **Tagline:** "محتار؟ عندك مرشد ومستشار"  
-> **Teammates:** Solo project (Abdulrahman Alkhunayn)  
-> **Stack:** React · Vite · Tailwind · Framer Motion · Three.js · PWA
+> **Submission date:** July 20, 2026  
+> **Status:** ✅ Submitted (received confirmation from Kanz)
+
+---
+
+## 🎬 Submission Assets
+
+- [x] **Live web app** — https://muhtar-app.vercel.app (HTTP 200, mobile + desktop)
+- [x] **Hero image** — `~/Desktop/محتار-screenshots/fresh/04-hero-with-stats.png`
+- [x] **Screenshots (13)** — `~/Desktop/محتار-screenshots/fresh/`
+- [x] **Demo video** — `muhtar-demo-final.mp4` (1:57, 21 MB, voice + ambient music)
+- [x] **Resume** — `Abdulrahman Alkhunayn - CV.pdf`
+- [x] **Google Drive folder** — linked in submission form
+- [x] **Stylized self-portrait** — Studio Ghibli style, circular frame
+
+---
+
+## 📋 Final Codebase Status
+
+| Layer | Status |
+|-------|--------|
+| React + Vite build | ✅ 1.93s, 260KB gzipped |
+| Mobile responsive | ✅ iPhone 13 tested |
+| Service Worker | ✅ Pass-through mode (no stale cache) |
+| PWA installable | ✅ Manifest + icons + SW |
+| Arabic diacritics | ✅ Cairo 900 + .arabic-heading |
+| 29 universities | ✅ Sourced from MoE |
+| 18 RIASEC majors | ✅ Peer-reviewed model |
+| Live URL | ✅ muhtar-app.vercel.app |
+
+---
+
+## 🏗️ Architecture Highlights
+
+- **Stack:** React 18 + Vite + TailwindCSS + Framer Motion + Three.js + Lucide
+- **Brain:** RIASEC vector engine + cosine similarity (typed, deterministic)
+- **Data:** 29 MoE universities + 18 Saudi-contextualized majors
+- **Deploy:** Vercel Edge Network with custom domain muhtar.amk.ink
+
+---
+
+## 🎯 Key Differentiators
+
+1. **Saudi-first**: Arabic RTL, MoE data, Vision 2030 alignment
+2. **Peer-reviewed science**: John Holland's RIASEC (1959) — 65 years of validation
+3. **Real data, no guesswork**: Admission odds from official sources
+4. **Mobile-native**: PWA installable on iPhone/Android
+5. **Apple-tier UX**: Three.js particles + Framer Motion + Apple typography
 
 ---
 
