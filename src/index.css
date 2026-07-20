@@ -8,7 +8,17 @@
   }
   body {
     @apply font-arabic text-primary antialiased;
-    font-feature-settings: "kern" 1, "liga" 1;
+    font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "ccmp" 1, "mark" 1, "mkmk" 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "ccmp" 1, "mark" 1, "mkmk" 1;
+  }
+  /* Arabic headlines — heavier weight + extra line-height for diacritic visibility */
+  html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3 {
+    font-weight: 800;
+    line-height: 1.5;
+    /* help Tajawal render three-dot letters (ث، ش، etc.) */
+    font-variant-ligatures: discretionary-ligatures;
+    text-rendering: geometricPrecision;
   }
   body[dir="ltr"] {
     @apply font-english;

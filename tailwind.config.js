@@ -35,8 +35,8 @@ export default {
         },
       },
       fontFamily: {
-        arabic: ['Tajawal', 'sans-serif'],
-        english: ['Inter', 'sans-serif'],
+        arabic: ['Tajawal', 'Cairo', 'IBM Plex Sans Arabic', 'Noto Sans Arabic', 'Segoe UI', 'Tahoma', 'sans-serif'],
+        english: ['Inter', 'system-ui', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-out',
