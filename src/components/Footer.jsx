@@ -13,11 +13,13 @@ export default function Footer({ lang }) {
         <div className="grid md:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
-            <img
-              src="/logo.png"
-              alt="محتار"
-              className="relative w-28 h-28 rounded-2xl object-contain mb-4 ring-2 ring-white/20"
-            />
+            <div className="inline-block p-3 rounded-2xl bg-white shadow-lg mb-4">
+              <img
+                src="/logo.png"
+                alt="محتار"
+                className="w-24 h-24 md:w-28 md:h-28 rounded-2xl object-contain"
+              />
+            </div>
             <p className="text-white/70 leading-relaxed">{t.about}</p>
             <div className="mt-4 flex items-center gap-2 text-gold-400">
               <Heart className="w-4 h-4 fill-current" />
