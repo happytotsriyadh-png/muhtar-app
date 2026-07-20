@@ -16,13 +16,16 @@ export default function Features({ lang }) {
   const features = Object.keys(ICONS);
 
   return (
-    <section id="features" className="py-20 bg-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="features" className="py-16 md:py-20 bg-white relative overflow-hidden">
+      {/* subtle background pattern */}
+      <div className="absolute inset-0 bg-mesh opacity-40 pointer-events-none" />
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
+          viewport={{ once: true, amount: 0.05 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-10 md:mb-14"
         >
           <h2
             className="text-3xl md:text-5xl arabic-heading text-primary mb-3"
@@ -36,18 +39,18 @@ export default function Features({ lang }) {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
           {features.map((key, i) => {
             const Icon = ICONS[key];
             const f = t[key];
             return (
               <motion.div
                 key={key}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                whileHover={{ y: -8, scale: 1.02 }}
+                viewport={{ once: true, amount: 0.05 }}
+                transition={{ delay: i * 0.06, duration: 0.4 }}
+                whileHover={{ y: -6, scale: 1.015 }}
                 className="group relative"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-gold-300/20 to-primary-200/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />

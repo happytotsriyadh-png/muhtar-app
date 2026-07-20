@@ -28,70 +28,63 @@ export default function Navbar({ lang, setLang, onStart, currentPath, goHome, go
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white/10 backdrop-blur-xl' : 'bg-transparent'
+        scrolled
+          ? 'bg-white/85 backdrop-blur-2xl shadow-[0_8px_32px_rgba(10,37,64,0.08)] border-b border-primary-900/5'
+          : 'bg-white/70 backdrop-blur-xl border-b border-white/40'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20 gap-3">
           {/* Logo */}
-          <motion.div whileHover={{ scale: 1.05 }} className="flex items-center gap-3 shrink-0">
-            <Link to="/" onClick={() => setMobileOpen(false)}>
-              <div className="relative group">
-                <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-gold-400/40 via-primary-500/30 to-primary-700/40 blur-md opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
-                <img
-                  src="/logo.png"
-                  alt="محتار"
-                  className="relative w-11 h-11 md:w-14 md:h-14 rounded-2xl shadow-xl ring-1 ring-gold-400/30 object-contain bg-white/50 backdrop-blur-sm"
-                />
-              </div>
+          <motion.div whileHover={{ scale: 1.04 }} className="flex items-center gap-2.5 shrink-0">
+            <Link to="/" onClick={() => setMobileOpen(false)} className="flex items-center gap-2.5">
+              <img
+                src="/logo.png"
+                alt="محتار"
+                className="w-10 h-10 md:w-11 md:h-11 rounded-xl shadow-md ring-1 ring-primary-900/10 object-contain bg-white"
+              />
+              <span className="hidden sm:block text-lg md:text-xl font-extrabold text-primary-900 arabic-heading">
+                محتار
+              </span>
             </Link>
           </motion.div>
 
-          {/* Desktop Nav — transparent glass pill behind links */}
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="hidden md:flex items-center gap-6 lg:gap-8 px-6 lg:px-8 py-3 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 shadow-md"
-          >
+          {/* Desktop Nav — clean text links on white pill */}
+          <div className="hidden md:flex items-center gap-1">
             {navLinks.map((link, i) => {
               const active = location.pathname === link.path || (link.path !== '/' && location.pathname.startsWith(link.path));
               return (
-                <motion.button
+                <button
                   key={link.key}
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 + i * 0.05 }}
-                  whileHover={{ y: -2 }}
                   onClick={() => link.navigate()}
-                  className={`px-2 py-1.5 rounded-full font-medium transition-colors whitespace-nowrap text-sm ${
-                    active ? 'text-white bg-white/15' : 'text-white/85 hover:text-white hover:bg-white/10'
+                  className={`px-4 py-2 rounded-full font-semibold transition-all whitespace-nowrap text-sm ${
+                    active
+                      ? 'text-primary-900 bg-primary-100/70'
+                      : 'text-primary-700 hover:text-primary-900 hover:bg-primary-50'
                   }`}
                 >
                   {t[link.key]}
-                </motion.button>
+                </button>
               );
             })}
-          </motion.div>
+          </div>
 
           {/* Right side */}
           <div className="flex items-center gap-2 shrink-0">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+            <button
               onClick={() => setLang(lang === 'ar' ? 'en' : 'ar')}
-              className="flex items-center gap-1.5 px-3 py-2 rounded-full bg-white/10 hover:bg-white/20 text-white font-medium text-sm transition-colors backdrop-blur-sm border border-white/20"
+              className="flex items-center gap-1.5 px-3 py-2 rounded-full text-primary-700 hover:text-primary-900 hover:bg-primary-50 font-semibold text-sm transition-colors"
             >
               <Globe className="w-4 h-4" />
               {t.languageToggle}
-            </motion.button>
+            </button>
             <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.96 }}
               onClick={onStart}
-              className="hidden md:flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-sm transition-all bg-gold-400 hover:bg-gold-500 text-primary shadow-lg shadow-gold-500/30"
+              className="hidden md:flex items-center gap-2 px-5 py-2.5 rounded-full font-bold text-sm transition-all bg-gradient-to-r from-gold-400 to-gold-500 hover:from-gold-500 hover:to-gold-600 text-primary-900 shadow-md shadow-gold-500/25"
             >
               <GraduationCap className="w-4 h-4" />
               {lang === 'ar' ? 'ابدأ الآن' : 'Start Now'}

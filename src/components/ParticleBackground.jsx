@@ -148,8 +148,9 @@ export default function ParticleBackground() {
     renderer.domElement.style.left = '0';
     renderer.domElement.style.width = '100vw';
     renderer.domElement.style.height = '100vh';
-    renderer.domElement.style.zIndex = '0';
+    renderer.domElement.style.zIndex = '-1';
     renderer.domElement.style.pointerEvents = 'none';
+    renderer.domElement.style.opacity = '0.45'; // Subtle, doesn't compete with text
 
     raycaster = new THREE.Raycaster();
     pointer = new THREE.Vector2();

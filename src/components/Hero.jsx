@@ -1,106 +1,105 @@
 import { motion } from 'framer-motion';
-import { ArrowLeft, Brain, Database, Volume2 } from 'lucide-react';
+import { ArrowLeft, Sparkles } from 'lucide-react';
 import { TRANSLATIONS } from '../data/i18n';
 
 export default function Hero({ lang, onStart }) {
   const t = TRANSLATIONS[lang].hero;
 
-  const features = [
-    { icon: Brain, key: 'smart' },
-    { icon: Database, key: 'data' },
-    { icon: Volume2, key: 'voice' },
+  // Trust indicators — single horizontal strip
+  const trust = [
+    { value: '29', label: lang === 'ar' ? 'جامعة حكومية' : 'Gov Universities' },
+    { value: '9', label: lang === 'ar' ? 'أسئلة فقط' : 'Questions' },
+    { value: '3min', label: lang === 'ar' ? 'للنتيجة' : 'To Result' },
   ];
 
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-10"
+      className="relative min-h-[100svh] flex items-center justify-center overflow-hidden pt-28 pb-16 md:pt-32 md:pb-20"
       style={{ background: 'transparent' }}
     >
-      {/* Subtle floating orbs in teal */}
+      {/* Soft floating orbs in teal — gentler than before */}
       <motion.div
-        animate={{
-          x: [0, 100, 0],
-          y: [0, -50, 0],
-        }}
-        transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute top-20 right-20 w-72 h-72 bg-primary-200/30 rounded-full blur-3xl -z-[5] pointer-events-none"
+        animate={{ x: [0, 60, 0], y: [0, -30, 0] }}
+        transition={{ duration: 22, repeat: Infinity, ease: 'easeInOut' }}
+        className="absolute top-32 right-10 w-72 h-72 bg-primary-200/35 rounded-full blur-3xl -z-[5] pointer-events-none"
       />
       <motion.div
-        animate={{
-          x: [0, -80, 0],
-          y: [0, 60, 0],
-        }}
-        transition={{ duration: 25, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute bottom-20 left-20 w-96 h-96 bg-primary-100/40 rounded-full blur-3xl -z-[5] pointer-events-none"
+        animate={{ x: [0, -50, 0], y: [0, 40, 0] }}
+        transition={{ duration: 28, repeat: Infinity, ease: 'easeInOut' }}
+        className="absolute bottom-10 left-10 w-96 h-96 bg-primary-100/45 rounded-full blur-3xl -z-[5] pointer-events-none"
       />
 
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Tagline — Hero logo removed; small icon lives in Navbar only */}
-
-        {/* Tagline — free-floating white text, no box */}
+      <div className="absolute inset-0 bg-mesh opacity-50 pointer-events-none" />
+      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        {/* Eyebrow — subtle badge */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="mt-20 md:mt-28 lg:mt-36 mb-10 md:mb-14 px-4"
+          transition={{ delay: 0.2, duration: 0.6 }}
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/85 backdrop-blur-md border border-primary-900/10 shadow-sm mb-8"
         >
-          <h1
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight"
-            style={{
-              color: '#ffffff',
-              textShadow: '0 2px 24px rgba(10, 37, 64, 0.55), 0 0 60px rgba(47, 171, 153, 0.3)',
-            }}
-          >
-            <span className="text-white">
-              {lang === 'ar' ? 'محتار؟' : 'Confused?'}
-            </span>
-            <span className="mx-2 text-gold-400">·</span>
-            <span className="text-white">
-              {lang === 'ar' ? 'عندك مرشد ومستشار' : 'You have a guide'}
-            </span>
-          </h1>
+          <Sparkles className="w-3.5 h-3.5 text-gold-500" />
+          <span className="text-xs md:text-sm font-semibold text-primary-800 arabic-heading">
+            {lang === 'ar' ? 'مستشار القبول الجامعي الأول في السعودية' : 'Saudi Arabia\'s first AI university counselor'}
+          </span>
         </motion.div>
 
-        {/* Subtitle — free-floating white text, no box */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
+        {/* Headline — large, bold, tight */}
+        <motion.h1
+          initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-          className="mb-8 max-w-3xl mx-auto px-4"
+          transition={{ delay: 0.35, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="arabic-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[1.05] tracking-tight text-primary-900"
         >
-          <p
-            className="text-base md:text-xl font-medium leading-relaxed"
-            style={{
-              color: '#ffffff',
-              textShadow: '0 2px 20px rgba(10, 37, 64, 0.6)',
-            }}
-          >
-            {t.subtitle}
-          </p>
-        </motion.div>
+          <span className="block">{lang === 'ar' ? 'محتار؟' : 'Confused?'}</span>
+          <span className="block mt-2 text-primary-700">
+            {lang === 'ar' ? (
+              <>عندك <span className="relative inline-block">
+                <span className="relative z-10 text-gold-600">مرشد</span>
+                <span className="absolute bottom-1 left-0 right-0 h-2 bg-gold-300/60 -z-0 rounded-full" />
+              </span> و<span className="relative inline-block">
+                <span className="relative z-10 text-gold-600">مستشار</span>
+                <span className="absolute bottom-1 left-0 right-0 h-2 bg-gold-300/60 -z-0 rounded-full" />
+              </span></>
+            ) : (
+              <>You have a <span className="text-gold-600">guide</span></>
+            )}
+          </span>
+        </motion.h1>
 
-        {/* Animated input bar */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
+        {/* Subtitle — single line, soft */}
+        <motion.p
+          initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7 }}
-          className="max-w-2xl mx-auto mb-10"
+          transition={{ delay: 0.55, duration: 0.6 }}
+          className="arabic-heading mt-6 md:mt-8 text-lg md:text-2xl text-primary-800/80 max-w-2xl mx-auto leading-relaxed font-medium"
+        >
+          {t.subtitle}
+        </motion.p>
+
+        {/* Search bar — single elegant input */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.7, duration: 0.6 }}
+          className="max-w-2xl mx-auto mt-10 md:mt-12"
         >
           <div className="relative group">
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-primary-600 rounded-2xl blur opacity-30 group-hover:opacity-60 transition" />
-            <div className="relative bg-white rounded-2xl shadow-xl p-2 flex items-center gap-2 border border-gray-100">
+            {/* Soft glow on hover */}
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-primary-300 via-primary-400 to-primary-500 rounded-2xl blur opacity-20 group-hover:opacity-40 transition-opacity duration-500" />
+            <div className="relative bg-white rounded-2xl shadow-xl shadow-primary-900/5 p-1.5 flex items-center gap-2 border border-primary-900/5">
               <input
                 type="text"
                 placeholder={t.placeholder}
-                className="flex-1 px-4 py-3 bg-transparent outline-none text-primary placeholder-primary/40 font-medium"
+                className="flex-1 px-4 py-3.5 bg-transparent outline-none text-primary-900 placeholder-primary-400 font-medium text-base"
                 dir={lang === 'ar' ? 'rtl' : 'ltr'}
               />
               <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
                 onClick={onStart}
-                className="flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-xl font-bold hover:bg-primary-600 hover:shadow-xl transition-all"
+                className="flex items-center gap-2 bg-primary-800 hover:bg-primary-900 text-white px-6 py-3 rounded-xl font-bold text-sm md:text-base transition-colors shadow-md"
               >
                 {t.cta}
                 <ArrowLeft className={`w-4 h-4 ${lang === 'ar' ? '' : 'rotate-180'}`} />
@@ -109,55 +108,25 @@ export default function Hero({ lang, onStart }) {
           </div>
         </motion.div>
 
-        {/* Quick features row — transparent glass cards with white text */}
+        {/* Trust indicators — single horizontal strip */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.9 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto"
+          transition={{ delay: 1.0, duration: 0.6 }}
+          className="mt-10 md:mt-14 flex flex-wrap justify-center items-center gap-x-8 md:gap-x-12 gap-y-3"
         >
-          {features.map((feature, i) => {
-            const f = TRANSLATIONS[lang].features[feature.key];
-            return (
-              <motion.div
-                key={feature.key}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1 + i * 0.1 }}
-                whileHover={{ y: -4, scale: 1.02 }}
-                className="bg-white/10 backdrop-blur-xl rounded-2xl p-5 text-start card-hover shadow-lg border border-white/20"
-              >
-                <feature.icon className="w-8 h-8 text-gold-400 mb-2" />
-                <h3 className="font-bold text-white mb-1">{f.title}</h3>
-                <p className="text-sm text-white/85">{f.desc}</p>
-              </motion.div>
-            );
-          })}
-        </motion.div>
-
-        {/* Stats — transparent glass cards */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.4 }}
-          className="mt-16 flex flex-wrap justify-center gap-6 text-center"
-        >
-          {[
-            { n: '29', label: lang === 'ar' ? 'جامعة حكومية' : 'Gov Universities' },
-            { n: '18+', label: lang === 'ar' ? 'تخصص' : 'Majors' },
-            { n: '60K+', label: lang === 'ar' ? 'طالب سعودي' : 'Saudi Students' },
-            { n: '3min', label: lang === 'ar' ? 'للنتيجة' : 'To Results' },
-          ].map((stat, i) => (
-            <motion.div
-              key={i}
-              whileHover={{ scale: 1.05 }}
-              className="text-center bg-white/10 backdrop-blur-md px-4 py-2 rounded-xl border border-white/20 shadow-sm"
-            >
-              <div className="text-3xl md:text-4xl font-extrabold text-gold-400">
-                {stat.n}
+          {trust.map((item, i) => (
+            <div key={i} className="flex items-center gap-3">
+              <div className="text-2xl md:text-3xl font-black text-gold-600 arabic-heading tabular-nums">
+                {item.value}
               </div>
-              <div className="text-sm text-white mt-1">{stat.label}</div>
-            </motion.div>
+              <div className="text-sm md:text-base font-semibold text-primary-800 arabic-heading">
+                {item.label}
+              </div>
+              {i < trust.length - 1 && (
+                <div className="hidden md:block w-px h-5 bg-primary-300/60 ms-6" />
+              )}
+            </div>
           ))}
         </motion.div>
       </div>

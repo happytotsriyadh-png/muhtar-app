@@ -4,14 +4,14 @@ import { TRANSLATIONS } from '../data/i18n';
 export default function HowItWorks({ lang }) {
   const t = TRANSLATIONS[lang].howItWorks;
   return (
-    <section id="how" className="py-20 bg-gradient-to-br from-primary-50/50 to-gold-50/30">
+    <section id="how" className="py-16 md:py-20 bg-gradient-to-br from-primary-50/50 to-gold-50/30">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          viewport={{ once: true, amount: 0.05 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-10 md:mb-12"
         >
           <h2
             className="text-3xl md:text-5xl arabic-heading text-primary mb-3"
@@ -29,11 +29,11 @@ export default function HowItWorks({ lang }) {
           {t.steps.map((step, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.5 }}
-              whileHover={{ y: -8, scale: 1.03 }}
+              viewport={{ once: true, amount: 0.05 }}
+              transition={{ delay: i * 0.07, duration: 0.4 }}
+              whileHover={{ y: -6, scale: 1.02 }}
               className="relative"
             >
               <div className="glass rounded-2xl p-6 h-full card-hover border-2 border-transparent hover:border-gold-300">
