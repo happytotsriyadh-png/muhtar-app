@@ -2,6 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Muhtar — Arabic typographic fix for three-dot letters (ث، ش، ت) */
+/* Local Cairo ensures no Google Fonts subsetting hides the dots */
+
+@font-face {
+  font-family: 'Cairo';
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url('/cairo-900.woff2') format('woff2');
+}
+
+/* Arabic headings — explicit Cairo font + dot rendering */
+.arabic-heading {
+  font-family: 'Cairo', 'Noto Sans Arabic', 'IBM Plex Sans Arabic', 'Tajawal', system-ui, sans-serif !important;
+  font-weight: 900 !important;
+  font-stretch: 100%;
+  /* Force Cairo font to draw all three-dots letters with separate marks */
+  font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1, 'ccmp' 1, 'mark' 1, 'mkmk' 1;
+  -webkit-font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1, 'ccmp' 1, 'mark' 1, 'mkmk' 1;
+  line-height: 1.6 !important;
+  letter-spacing: -0.02em !important;
+  text-rendering: geometricPrecision !important;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -11,14 +35,6 @@
     font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "ccmp" 1, "mark" 1, "mkmk" 1;
     text-rendering: optimizeLegibility;
     -webkit-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "ccmp" 1, "mark" 1, "mkmk" 1;
-  }
-  /* Arabic headlines — heavier weight + extra line-height for diacritic visibility */
-  html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3 {
-    font-weight: 800;
-    line-height: 1.5;
-    /* help Tajawal render three-dot letters (ث، ش، etc.) */
-    font-variant-ligatures: discretionary-ligatures;
-    text-rendering: geometricPrecision;
   }
   body[dir="ltr"] {
     @apply font-english;

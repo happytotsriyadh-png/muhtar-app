@@ -110,7 +110,7 @@ export default function UniversitiesExplorer({ lang }) {
             {lang === 'ar' ? 'بيانات رسمية' : 'Official Data'}
           </div>
           <h2
-            className="text-3xl md:text-5xl font-black text-primary mb-3"
+            className="text-3xl md:text-5xl arabic-heading text-primary mb-3"
             style={{
               textShadow: '0 0 1px rgba(15, 66, 57, 0.6), 0 1px 2px rgba(15, 66, 57, 0.3)',
               letterSpacing: '-0.02em',
