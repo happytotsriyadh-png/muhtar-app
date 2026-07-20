@@ -167,25 +167,19 @@ export default function ChatFlow({ lang, onComplete, onSkip }) {
           className="max-w-2xl w-full"
         >
           <div className="relative glass rounded-3xl p-8 md:p-12 shadow-2xl text-center">
+            {/* Brand logo — real PNG with glow halo */}
             <motion.div
-              animate={{ rotate: [0, -10, 10, -10, 0] }}
-              transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
-              className="mx-auto mb-6 relative w-20 h-20 md:w-24 md:h-24"
+              animate={{ rotate: [0, -3, 3, -3, 0] }}
+              transition={{ duration: 4, repeat: Infinity, repeatDelay: 2 }}
+              className="mx-auto mb-6 relative w-28 h-28 md:w-32 md:h-32"
             >
-              <div className="absolute -inset-2 rounded-3xl bg-gradient-to-br from-gold-400/40 via-primary-500/30 to-primary-700/40 blur-xl opacity-80" />
-              <div className="relative w-full h-full rounded-3xl bg-gradient-to-br from-primary via-primary-700 to-primary-900 flex items-center justify-center shadow-2xl ring-2 ring-gold-400/40 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent" />
-                <span
-                  className="relative font-extrabold text-white text-2xl md:text-3xl tracking-tight leading-none"
-                  style={{
-                    fontFamily: 'Tajawal, system-ui',
-                    letterSpacing: '-0.02em',
-                    textShadow: '0 2px 4px rgba(0,0,0,0.3), 0 0 16px rgba(212,175,55,0.4)',
-                  }}
-                >
-                  محتار
-                </span>
-                <span className="absolute top-2 right-2 w-2 h-2 rounded-full bg-gold-400 shadow-[0_0_8px_rgba(212,175,55,0.9)]" />
+              <div className="absolute -inset-3 rounded-[28px] bg-gradient-to-br from-gold-400/50 via-primary-500/40 to-primary-700/50 blur-2xl opacity-90" />
+              <div className="relative w-full h-full rounded-[24px] bg-white shadow-2xl ring-2 ring-gold-400/40 overflow-hidden flex items-center justify-center">
+                <img
+                  src="/logo.png"
+                  alt="محتار"
+                  className="w-full h-full object-contain p-2"
+                />
               </div>
             </motion.div>
             <h2 className="text-3xl md:text-4xl font-extrabold text-primary mb-3">
@@ -202,14 +196,6 @@ export default function ChatFlow({ lang, onComplete, onSkip }) {
               >
                 <Sparkles className="w-5 h-5" />
                 {t.start}
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.97 }}
-                onClick={onSkip}
-                className="px-6 py-3 rounded-xl border-2 border-primary/20 text-primary font-bold hover:bg-primary/5 transition"
-              >
-                {t.skipToResults}
               </motion.button>
             </div>
 
@@ -258,14 +244,8 @@ export default function ChatFlow({ lang, onComplete, onSkip }) {
             >
               <div className="flex items-start gap-3">
                 <div className="relative flex-shrink-0">
-                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary via-primary-700 to-primary-900 flex items-center justify-center shadow-lg ring-1 ring-gold-400/30 overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent" />
-                    <span
-                      className="relative font-extrabold text-white text-xs tracking-tight leading-none"
-                      style={{ fontFamily: 'Tajawal, system-ui', letterSpacing: '-0.02em' }}
-                    >
-                      محتار
-                    </span>
+                  <div className="w-12 h-12 rounded-2xl bg-white shadow-lg ring-1 ring-gold-400/30 overflow-hidden">
+                    <img src="/logo.png" alt="محتار" className="w-full h-full object-contain" />
                   </div>
                   <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-emerald-400 border-2 border-white shadow" />
                 </div>
@@ -308,18 +288,8 @@ export default function ChatFlow({ lang, onComplete, onSkip }) {
               {/* Bot avatar + question */}
               <div className="flex items-start gap-3 mb-6">
                 <div className="relative flex-shrink-0">
-                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary via-primary-700 to-primary-900 flex items-center justify-center shadow-lg ring-1 ring-gold-400/30 overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent" />
-                    <span
-                      className="relative font-extrabold text-white text-xs tracking-tight leading-none"
-                      style={{
-                        fontFamily: 'Tajawal, system-ui',
-                        letterSpacing: '-0.02em',
-                        textShadow: '0 1px 2px rgba(0,0,0,0.3)',
-                      }}
-                    >
-                      محتار
-                    </span>
+                  <div className="w-12 h-12 rounded-2xl bg-white shadow-lg ring-1 ring-gold-400/30 overflow-hidden">
+                    <img src="/logo.png" alt="محتار" className="w-full h-full object-contain" />
                   </div>
                   <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-emerald-400 border-2 border-white shadow" />
                 </div>
@@ -432,14 +402,6 @@ export default function ChatFlow({ lang, onComplete, onSkip }) {
               </div>
 
               {/* Skip to results button */}
-              <div className="mt-6 text-center">
-                <button
-                  onClick={onSkip}
-                  className="text-sm text-primary/50 hover:text-primary underline"
-                >
-                  {t.skipToResults}
-                </button>
-              </div>
             </motion.div>
           ) : null}
         </AnimatePresence>
