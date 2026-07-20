@@ -15,7 +15,7 @@ export default function Hero({ lang, onStart }) {
   return (
     <section
       id="hero"
-      className="relative min-h-[100svh] flex items-center justify-center overflow-hidden pt-28 pb-16 md:pt-32 md:pb-20"
+      className="relative min-h-[100svh] flex items-center justify-center overflow-hidden pt-28 pb-16 md:pt-32 md:pb-20 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-700"
       style={{ background: 'transparent' }}
     >
       {/* Soft floating orbs in teal — gentler than before */}
@@ -37,27 +37,27 @@ export default function Hero({ lang, onStart }) {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/85 backdrop-blur-md border border-primary-900/10 shadow-sm mb-8"
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/30 shadow-sm mb-8"
         >
-          <Sparkles className="w-3.5 h-3.5 text-gold-500" />
-          <span className="text-xs md:text-sm font-semibold text-primary-800 arabic-heading">
+          <Sparkles className="w-3.5 h-3.5 text-gold-300" />
+          <span className="text-xs md:text-sm font-semibold text-white arabic-heading">
             {lang === 'ar' ? 'مستشار القبول الجامعي الأول في السعودية' : 'Saudi Arabia\'s first AI university counselor'}
           </span>
         </motion.div>
 
-        {/* Headline — large, bold, tight */}
+        {/* Headline — large, bold, tight, white text on dark gradient */}
         <motion.h1
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.35, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="arabic-heading text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[1.15] tracking-tight text-primary-900 px-2"
+          className="arabic-heading text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[1.15] tracking-tight text-white px-2 drop-shadow-[0_2px_24px_rgba(0,0,0,0.45)]"
         >
           <span className="block">{lang === 'ar' ? 'محتار؟' : 'Confused?'}</span>
-          <span className="block mt-2 md:mt-3 text-primary-700 text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
+          <span className="block mt-2 md:mt-3 text-white/95 text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
             {lang === 'ar' ? (
-              <>عندك <span className="text-gold-600 border-b-4 border-gold-400/80 pb-1">مرشد</span> و<span className="text-gold-600 border-b-4 border-gold-400/80 pb-1">مستشار</span></>
+              <>عندك <span className="text-gold-400 border-b-4 border-gold-400/80 pb-1">مرشد</span> و<span className="text-gold-400 border-b-4 border-gold-400/80 pb-1">مستشار</span></>
             ) : (
-              <>You have a <span className="text-gold-600">guide</span></>
+              <>You have a <span className="text-gold-400">guide</span></>
             )}
           </span>
         </motion.h1>
@@ -67,7 +67,7 @@ export default function Hero({ lang, onStart }) {
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.55, duration: 0.6 }}
-          className="arabic-heading mt-6 md:mt-8 text-lg md:text-2xl text-primary-800/80 max-w-2xl mx-auto leading-relaxed font-medium"
+          className="arabic-heading mt-6 md:mt-8 text-lg md:text-2xl text-white/85 max-w-2xl mx-auto leading-relaxed font-medium drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)]"
         >
           {t.subtitle}
         </motion.p>
@@ -81,7 +81,7 @@ export default function Hero({ lang, onStart }) {
         >
           <a
             href="#how"
-            className="inline-flex items-center gap-1.5 text-sm md:text-base font-semibold text-primary-700 hover:text-primary-900 transition-colors arabic-heading"
+            className="inline-flex items-center gap-1.5 text-sm md:text-base font-semibold text-gold-300 hover:text-gold-200 transition-colors arabic-heading drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)]"
           >
             <span>{t.ctaSecondary}</span>
             <span className={lang === 'ar' ? 'rotate-180' : ''}>→</span>
