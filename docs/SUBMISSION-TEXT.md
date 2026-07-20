@@ -58,10 +58,15 @@
 
 ## Submission artifacts checklist
 
-- [x] **Web app** — https://muhtar-app.vercel.app (live, responsive, bilingual AR/EN, PWA-installable)
+- [x] **Web app** — https://muhtar-app.vercel.app (live, responsive, bilingual AR/EN, PWA-installable, custom domain muhtar.amk.ink pending propagation)
 - [x] **Hero image** — `04b-hero-with-stats.png` (top section: logo + tagline + search + features + 4 stats)
 - [x] **Supporting screenshots** — 8 real captures (hero, chat, results overview, path card, university explorer)
 - [x] **Resume** — `Abdulrahman Alkhunayn - CV.pdf`
-- [x] **Demo video** — TBD (recording website walkthrough with QuickTime Player, 1–3 min, 16:9, with mentor voice line)
+- [x] **Demo video** — `muhtar-demo-v2.mp4` (108s, 58MB, 1920×1080 landscape, 9 scenes: hero → wizard Q1 → Q2-5 montage → loading → results → path card detail → universities explorer → about → closing card with tagline)
 - [x] **Description text** — this file, 6 fields, all green on word counters
 - [x] **Team name** — solo submission, field blank or "محتار" (solo track)
+- [x] **PWA verified** — manifest + service worker (cache v3) + 192/512/180/32/16 icons
+- [x] **Saudi MoE data source** — 29 government universities directly from moe.gov.sa
+- [x] **RIASEC peer-reviewed model** — John Holland (1959), typed vector engine, cosine similarity scoring
+- [x] **Self-hosted Arabic font** — Cairo-900 woff2 + .arabic-heading class to preserve ث/ش/ت diacritics
+- [x] **AI tool stack** — Claude (Hermes AI) for scaffolding + ElevenLabs-ready + Magnific-credited + Three.js particle bg + Framer Motion transitions
