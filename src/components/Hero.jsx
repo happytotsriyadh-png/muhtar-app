@@ -38,46 +38,38 @@ export default function Hero({ lang, onStart }) {
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Tagline — Hero logo removed; small icon lives in Navbar only */}
 
-        {/* Tagline — free-floating white text, no box */}
+        {/* Tagline — in a transparent glass card with white text */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="mt-20 md:mt-28 lg:mt-36 mb-10 md:mb-14"
+          className="inline-block mt-20 md:mt-28 lg:mt-36 mb-10 md:mb-14"
         >
-          <h1
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight px-4"
-            style={{
-              color: '#ffffff',
-              textShadow: '0 2px 24px rgba(10, 37, 64, 0.45), 0 0 60px rgba(47, 171, 153, 0.25)',
-            }}
-          >
-            <span className="text-white">
-              {lang === 'ar' ? 'محتار؟' : 'Confused?'}
-            </span>
-            <span className="mx-2 text-gold-400">·</span>
-            <span className="text-white">
-              {lang === 'ar' ? 'عندك مرشد ومستشار' : 'You have a guide'}
-            </span>
-          </h1>
+          <div className="relative px-6 py-3 md:px-8 md:py-4 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-xl">
+            <h1 className="relative text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight">
+              <span className="text-white">
+                {lang === 'ar' ? 'محتار؟' : 'Confused?'}
+              </span>
+              <span className="mx-2 text-gold-400">·</span>
+              <span className="text-white">
+                {lang === 'ar' ? 'عندك مرشد ومستشار' : 'You have a guide'}
+              </span>
+            </h1>
+          </div>
         </motion.div>
 
-        {/* Subtitle — free-floating white text */}
+        {/* Subtitle — in a transparent glass card with white text */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
           className="mb-8 max-w-3xl mx-auto px-4"
         >
-          <p
-            className="text-base md:text-xl font-medium leading-relaxed"
-            style={{
-              color: '#ffffff',
-              textShadow: '0 2px 20px rgba(10, 37, 64, 0.5)',
-            }}
-          >
-            {t.subtitle}
-          </p>
+          <div className="relative inline-block px-6 py-3 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg">
+            <p className="relative text-base md:text-lg text-white font-medium leading-relaxed">
+              {t.subtitle}
+            </p>
+          </div>
         </motion.div>
 
         {/* Animated input bar */}
@@ -109,7 +101,7 @@ export default function Hero({ lang, onStart }) {
           </div>
         </motion.div>
 
-        {/* Quick features row — free-floating cards on background */}
+        {/* Quick features row — transparent glass cards with white text */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -125,22 +117,22 @@ export default function Hero({ lang, onStart }) {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1 + i * 0.1 }}
                 whileHover={{ y: -4, scale: 1.02 }}
-                className="text-start"
+                className="bg-white/10 backdrop-blur-xl rounded-2xl p-5 text-start card-hover shadow-lg border border-white/20"
               >
-                <feature.icon className="w-8 h-8 text-gold-400 mb-2" style={{ filter: 'drop-shadow(0 2px 8px rgba(10,37,64,0.5))' }} />
-                <h3 className="font-bold text-white" style={{ textShadow: '0 2px 16px rgba(10,37,64,0.5)' }}>{f.title}</h3>
-                <p className="text-sm text-white/80" style={{ textShadow: '0 1px 8px rgba(10,37,64,0.6)' }}>{f.desc}</p>
+                <feature.icon className="w-8 h-8 text-gold-400 mb-2" />
+                <h3 className="font-bold text-white mb-1">{f.title}</h3>
+                <p className="text-sm text-white/85">{f.desc}</p>
               </motion.div>
             );
           })}
         </motion.div>
 
-        {/* Stats — free-floating on background */}
+        {/* Stats — transparent glass cards */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.4 }}
-          className="mt-16 flex flex-wrap justify-center gap-8 text-center"
+          className="mt-16 flex flex-wrap justify-center gap-6 text-center"
         >
           {[
             { n: '29', label: lang === 'ar' ? 'جامعة حكومية' : 'Gov Universities' },
@@ -151,17 +143,12 @@ export default function Hero({ lang, onStart }) {
             <motion.div
               key={i}
               whileHover={{ scale: 1.05 }}
-              className="text-center"
+              className="text-center bg-white/10 backdrop-blur-md px-4 py-2 rounded-xl border border-white/20 shadow-sm"
             >
-              <div
-                className="text-3xl md:text-4xl font-extrabold text-gold-400"
-                style={{ textShadow: '0 2px 24px rgba(10,37,64,0.6), 0 0 40px rgba(212,175,55,0.3)' }}
-              >
+              <div className="text-3xl md:text-4xl font-extrabold text-gold-400">
                 {stat.n}
               </div>
-              <div className="text-sm text-white mt-1" style={{ textShadow: '0 1px 8px rgba(10,37,64,0.6)' }}>
-                {stat.label}
-              </div>
+              <div className="text-sm text-white mt-1">{stat.label}</div>
             </motion.div>
           ))}
         </motion.div>

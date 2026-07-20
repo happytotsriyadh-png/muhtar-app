@@ -30,7 +30,7 @@ export default function Navbar({ lang, setLang, onStart, currentPath, goHome, go
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-transparent' : 'bg-transparent'
+        scrolled ? 'bg-white/10 backdrop-blur-xl' : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -49,12 +49,12 @@ export default function Navbar({ lang, setLang, onStart, currentPath, goHome, go
             </Link>
           </motion.div>
 
-          {/* Desktop Nav — no box, just free-floating links */}
+          {/* Desktop Nav — transparent glass pill behind links */}
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="hidden md:flex items-center gap-6 lg:gap-8 px-2 py-2"
+            className="hidden md:flex items-center gap-6 lg:gap-8 px-6 lg:px-8 py-3 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 shadow-md"
           >
             {navLinks.map((link, i) => {
               const active = location.pathname === link.path || (link.path !== '/' && location.pathname.startsWith(link.path));
@@ -67,9 +67,8 @@ export default function Navbar({ lang, setLang, onStart, currentPath, goHome, go
                   whileHover={{ y: -2 }}
                   onClick={() => link.navigate()}
                   className={`px-2 py-1.5 rounded-full font-medium transition-colors whitespace-nowrap text-sm ${
-                    active ? 'text-white bg-white/15' : 'text-white/85 hover:text-white'
+                    active ? 'text-white bg-white/15' : 'text-white/85 hover:text-white hover:bg-white/10'
                   }`}
-                  style={{ textShadow: '0 1px 8px rgba(10,37,64,0.6)' }}
                 >
                   {t[link.key]}
                 </motion.button>
@@ -83,8 +82,7 @@ export default function Navbar({ lang, setLang, onStart, currentPath, goHome, go
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setLang(lang === 'ar' ? 'en' : 'ar')}
-              className="flex items-center gap-1.5 px-3 py-2 rounded-full hover:bg-white/10 text-white font-medium text-sm transition-colors"
-              style={{ textShadow: '0 1px 6px rgba(10,37,64,0.5)' }}
+              className="flex items-center gap-1.5 px-3 py-2 rounded-full bg-white/10 hover:bg-white/20 text-white font-medium text-sm transition-colors backdrop-blur-sm border border-white/20"
             >
               <Globe className="w-4 h-4" />
               {t.languageToggle}
